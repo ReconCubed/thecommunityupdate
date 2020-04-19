@@ -1,4 +1,5 @@
 {
   "block.communityupdate.vexed_earth": "Vexed Earth",
-  "text.communityupdate.nospawns" : "No mobs are able to spawn here."
+  "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
+  "itemgroup.communityupdate": "The Community Update"
 }
