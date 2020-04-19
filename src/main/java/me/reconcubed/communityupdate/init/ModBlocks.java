@@ -1,0 +1,22 @@
+package me.reconcubed.communityupdate.init;
+
+import me.reconcubed.communityupdate.CommunityUpdate;
+import me.reconcubed.communityupdate.block.VexedEarthBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+
+public class ModBlocks {
+    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, CommunityUpdate.MODID);
+
+    public static final RegistryObject<Block> VEXED_EARTH = BLOCKS.register("vexed_earth", () -> new VexedEarthBlock(
+            Block.Properties.create(Material.ORGANIC)
+                    .hardnessAndResistance(0.5F, 0.5F)
+                    .sound(SoundType.PLANT)
+                    .harvestTool(ToolType.SHOVEL)));
+
+}
