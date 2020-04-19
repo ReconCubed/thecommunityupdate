@@ -2,6 +2,7 @@ package me.reconcubed.communityupdate.init;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.block.BookshelfLeverBlock;
+import me.reconcubed.communityupdate.block.TorchLeverBlock;
 import me.reconcubed.communityupdate.block.VexedEarthBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -25,5 +26,12 @@ public class ModBlocks {
                     .hardnessAndResistance(1.5F)
                     .sound(SoundType.WOOD)
                     .harvestTool(ToolType.AXE)));
+
+    public static final RegistryObject<Block> TORCH_LEVER = BLOCKS.register("torch_lever", () -> new TorchLeverBlock(
+            Block.Properties.create(Material.MISCELLANEOUS)
+                    .hardnessAndResistance(0)
+                    .sound(SoundType.WOOD)
+                    .lightValue(14)
+                    .doesNotBlockMovement()));
 
 }

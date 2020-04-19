@@ -1,6 +1,7 @@
 {
   "block.communityupdate.vexed_earth": "Vexed Earth",
   "block.communityupdate.bookshelf_lever": "Bookshelf Lever",
+  "block.communityupdate.torch_lever": "Torch Lever",
 
   "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
   "itemgroup.communityupdate": "The Community Update"
