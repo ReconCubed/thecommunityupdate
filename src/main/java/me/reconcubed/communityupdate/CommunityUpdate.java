@@ -52,7 +52,7 @@ public class CommunityUpdate {
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
 
-        modEventBus.addListener(this::useRoseOnDirt);
+        MinecraftForge.EVENT_BUS.addListener(this::useRoseOnDirt);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
