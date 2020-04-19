@@ -1,6 +1,7 @@
 package me.reconcubed.communityupdate.init;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
+import me.reconcubed.communityupdate.block.BookshelfButtonBlock;
 import me.reconcubed.communityupdate.block.BookshelfLeverBlock;
 import me.reconcubed.communityupdate.block.TorchLeverBlock;
 import me.reconcubed.communityupdate.block.VexedEarthBlock;
@@ -33,5 +34,11 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .lightValue(14)
                     .doesNotBlockMovement()));
+
+    public static final RegistryObject<Block> BOOKSHELF_BUTTON = BLOCKS.register("bookshelf_button", () -> new BookshelfButtonBlock(
+            Block.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1.5F)
+                    .sound(SoundType.WOOD)
+                    .harvestTool(ToolType.AXE)));
 
 }

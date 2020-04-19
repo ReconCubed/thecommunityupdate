@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=north,powered=false": {
+      "model": "minecraft:block/bookshelf"
+    },
+    "facing=east,powered=false": {
+      "model": "minecraft:block/bookshelf",
+      "y": 90
+    },
+    "facing=south,powered=false": {
+      "model": "minecraft:block/bookshelf",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "minecraft:block/bookshelf",
+      "y": 270
+    },
+
+    "facing=north,powered=true": {
+      "model": "communityupdate:block/bookshelf_lever_powered"
+    },
+    "facing=east,powered=true": {
+      "model": "communityupdate:block/bookshelf_lever_powered",
+      "y": 90
+    },
+    "facing=south,powered=true": {
+      "model": "communityupdate:block/bookshelf_lever_powered",
+      "y": 180
+    },
+    "facing=west,powered=true": {
+      "model": "communityupdate:block/bookshelf_lever_powered",
+      "y": 270
+    }
+
+  }
+}
