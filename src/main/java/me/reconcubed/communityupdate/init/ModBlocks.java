@@ -1,6 +1,7 @@
 package me.reconcubed.communityupdate.init;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
+import me.reconcubed.communityupdate.block.BookshelfLeverBlock;
 import me.reconcubed.communityupdate.block.VexedEarthBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -15,8 +16,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> VEXED_EARTH = BLOCKS.register("vexed_earth", () -> new VexedEarthBlock(
             Block.Properties.create(Material.ORGANIC)
-                    .hardnessAndResistance(0.5F, 0.5F)
+                    .hardnessAndResistance(0.5F)
                     .sound(SoundType.PLANT)
                     .harvestTool(ToolType.SHOVEL)));
+
+    public static final RegistryObject<Block> BOOKSHELF_LEVER = BLOCKS.register("bookshelf_lever", () -> new BookshelfLeverBlock(
+            Block.Properties.create(Material.WOOD)
+                    .hardnessAndResistance(1.5F)
+                    .sound(SoundType.WOOD)
+                    .harvestTool(ToolType.AXE)));
 
 }
