@@ -3,6 +3,7 @@ package me.reconcubed.communityupdate.init;
 import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.block.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.RedstoneLampBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
@@ -44,6 +45,13 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .lightValue(14)
                     .doesNotBlockMovement()));
+
+    public static final RegistryObject<Block> INVERTED_REDSTONE_LAMP = BLOCKS.register("inverted_redstone_lamp", () -> new InvertedRedstoneLampBlock(
+            Block.Properties.create(Material.REDSTONE_LIGHT)
+                    .lightValue(15)
+                    .hardnessAndResistance(0.3F)
+                    .sound(SoundType.GLASS)));
+
 
 
 }
