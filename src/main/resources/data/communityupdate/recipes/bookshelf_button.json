@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:buttons"
+    },
+    {
+      "item": "minecraft:bookshelf"
+    }
+  ],
+  "result": {
+    "item": "communityupdate:bookshelf_button",
+    "count": 1
+  }
+}
