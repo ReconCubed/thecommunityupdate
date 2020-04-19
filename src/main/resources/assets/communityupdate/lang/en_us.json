@@ -3,6 +3,7 @@
   "block.communityupdate.bookshelf_lever": "Bookshelf Lever",
   "block.communityupdate.bookshelf_button": "Bookshelf Button",
   "block.communityupdate.torch_lever": "Torch Lever",
+  "block.communityupdate.torch_button": "Torch Button",
 
   "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
   "itemGroup.communityupdate": "The Community Update"

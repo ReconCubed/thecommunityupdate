@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=east,powered=false": {
+      "model": "minecraft:block/wall_torch"
+    },
+    "facing=south,powered=false": {
+      "model": "minecraft:block/wall_torch",
+      "y": 90
+    },
+    "facing=west,powered=false": {
+      "model": "minecraft:block/wall_torch",
+      "y": 180
+    },
+    "facing=north,powered=false": {
+      "model": "minecraft:block/wall_torch",
+      "y": 270
+    },
+
+    "facing=east,powered=true": {
+      "model": "communityupdate:block/torch_lever_powered"
+    },
+    "facing=south,powered=true": {
+      "model": "communityupdate:block/torch_lever_powered",
+      "y": 90
+    },
+    "facing=west,powered=true": {
+      "model": "communityupdate:block/torch_lever_powered",
+      "y": 180
+    },
+    "facing=north,powered=true": {
+      "model": "communityupdate:block/torch_lever_powered",
+      "y": 270
+    }
+  }
+}

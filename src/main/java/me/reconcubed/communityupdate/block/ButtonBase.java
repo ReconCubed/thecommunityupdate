@@ -45,7 +45,7 @@ public class ButtonBase extends Block {
         return true;
     }
 
-    private void updateNeighbors(BlockState state, World worldIn, BlockPos pos) {
+    protected void updateNeighbors(BlockState state, World worldIn, BlockPos pos) {
         worldIn.notifyNeighborsOfStateChange(pos, this);
         worldIn.notifyNeighborsOfStateChange(pos.offset(getFacing(state).getOpposite()), this);
     }
