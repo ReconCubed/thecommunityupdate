@@ -8,15 +8,9 @@ import net.minecraft.item.Items;
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
-/**
- * This class holds all our ItemGroups (Formerly called CreativeTabs).
- * Static initialisers are fine here.
- *
- * @author Cadiboo
- */
 public final class ModItemGroups {
 
-    public static final ItemGroup COMMUNITY_UPDATE_ITEM_GROUP = new ModItemGroup(CommunityUpdate.MODID, () -> new ItemStack(Items.PUMPKIN));
+    public static final ItemGroup COMMUNITY_UPDATE_ITEM_GROUP = new ModItemGroup(CommunityUpdate.MODID, () -> new ItemStack(ModBlocks.VEXED_EARTH.get()));
 
     public static final class ModItemGroup extends ItemGroup {
 
