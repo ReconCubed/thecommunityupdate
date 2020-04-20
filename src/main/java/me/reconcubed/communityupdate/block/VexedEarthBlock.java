@@ -162,5 +162,6 @@ public class VexedEarthBlock extends GrassBlock {
         return (MobEntity) ent;
     }
 
+    // TODO: Fire burns Vexed Earth back to dirt + config
 
 }
