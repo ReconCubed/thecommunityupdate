@@ -3,7 +3,9 @@ package me.reconcubed.communityupdate.init;
 import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.block.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -51,6 +53,53 @@ public class ModBlocks {
                     .hardnessAndResistance(0.3F)
                     .sound(SoundType.GLASS)));
 
+    /**
+     *      ----------------    CONCRETE STAIRS    ----------------
+     */
 
+    public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = BLOCKS.register("white_concrete_stairs", () -> new StairsBlock(Blocks.WHITE_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.WHITE_CONCRETE)));
+
+    public static final RegistryObject<Block> BLACK_CONCRETE_STAIRS = BLOCKS.register("black_concrete_stairs", () -> new StairsBlock(Blocks.BLACK_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.BLACK_CONCRETE)));
+
+    public static final RegistryObject<Block> ORANGE_CONCRETE_STAIRS = BLOCKS.register("orange_concrete_stairs", () -> new StairsBlock(Blocks.ORANGE_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.ORANGE_CONCRETE)));
+
+    public static final RegistryObject<Block> MAGENTA_CONCRETE_STAIRS = BLOCKS.register("magenta_concrete_stairs", () -> new StairsBlock(Blocks.MAGENTA_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.MAGENTA_CONCRETE)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_CONCRETE_STAIRS = BLOCKS.register("light_blue_concrete_stairs", () -> new StairsBlock(Blocks.LIGHT_BLUE_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.LIGHT_BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> YELLOW_CONCRETE_STAIRS = BLOCKS.register("yellow_concrete_stairs", () -> new StairsBlock(Blocks.YELLOW_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.YELLOW_CONCRETE)));
+
+    public static final RegistryObject<Block> LIME_CONCRETE_STAIRS = BLOCKS.register("lime_concrete_stairs", () -> new StairsBlock(Blocks.LIME_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.LIME_CONCRETE)));
+
+    public static final RegistryObject<Block> PINK_CONCRETE_STAIRS = BLOCKS.register("pink_concrete_stairs", () -> new StairsBlock(Blocks.PINK_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.PINK_CONCRETE)));
+
+    public static final RegistryObject<Block> GRAY_CONCRETE_STAIRS = BLOCKS.register("gray_concrete_stairs", () -> new StairsBlock(Blocks.GRAY_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.GRAY_CONCRETE)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_CONCRETE_STAIRS = BLOCKS.register("light_gray_concrete_stairs", () -> new StairsBlock(Blocks.LIGHT_GRAY_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.LIGHT_GRAY_CONCRETE)));
+
+    public static final RegistryObject<Block> BLUE_CONCRETE_STAIRS = BLOCKS.register("blue_concrete_stairs", () -> new StairsBlock(Blocks.BLUE_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> PURPLE_CONCRETE_STAIRS = BLOCKS.register("purple_concrete_stairs", () -> new StairsBlock(Blocks.PURPLE_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.PURPLE_CONCRETE)));
+
+    public static final RegistryObject<Block> GREEN_CONCRETE_STAIRS = BLOCKS.register("green_concrete_stairs", () -> new StairsBlock(Blocks.GREEN_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.GREEN_CONCRETE)));
+
+    public static final RegistryObject<Block> BROWN_CONCRETE_STAIRS = BLOCKS.register("brown_concrete_stairs", () -> new StairsBlock(Blocks.BROWN_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.BROWN_CONCRETE)));
+
+    public static final RegistryObject<Block> RED_CONCRETE_STAIRS = BLOCKS.register("red_concrete_stairs", () -> new StairsBlock(Blocks.RED_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.RED_CONCRETE)));
 
 }
