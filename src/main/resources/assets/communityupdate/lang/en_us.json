@@ -5,6 +5,8 @@
   "block.communityupdate.torch_lever": "Torch Lever",
   "block.communityupdate.torch_button": "Torch Button",
   "block.communityupdate.inverted_redstone_lamp": "Inverted Redstone Lamp",
+
+
   "block.communityupdate.white_concrete_stairs": "White Concrete Stairs",
   "block.communityupdate.orange_concrete_stairs": "Orange Concrete Stairs",
   "block.communityupdate.magenta_concrete_stairs": "Magenta Concrete Stairs",
@@ -21,6 +23,25 @@
   "block.communityupdate.brown_concrete_stairs": "Brown Concrete Stairs",
   "block.communityupdate.red_concrete_stairs": "Red Concrete Stairs",
   "block.communityupdate.black_concrete_stairs": "Black Concrete Stairs",
+
+
+  "block.communityupdate.white_concrete_slab": "White Concrete Slab",
+  "block.communityupdate.orange_concrete_slab": "Orange Concrete Slab",
+  "block.communityupdate.magenta_concrete_slab": "Magenta Concrete Slab",
+  "block.communityupdate.light_blue_concrete_slab": "Light Blue Concrete Slab",
+  "block.communityupdate.yellow_concrete_slab": "Yellow Concrete Slab",
+  "block.communityupdate.lime_concrete_slab": "Lime Concrete Slab",
+  "block.communityupdate.pink_concrete_slab": "Pink Concrete Slab",
+  "block.communityupdate.gray_concrete_slab": "Gray Concrete Slab",
+  "block.communityupdate.light_gray_concrete_slab": "Light Gray Concrete Slab",
+  "block.communityupdate.cyan_concrete_slab": "Cyan Concrete Slab",
+  "block.communityupdate.blue_concrete_slab": "Blue Concrete Slab",
+  "block.communityupdate.purple_concrete_slab": "Purple Concrete Slab",
+  "block.communityupdate.green_concrete_slab": "Green Concrete Slab",
+  "block.communityupdate.brown_concrete_slab": "Brown Concrete Slab",
+  "block.communityupdate.red_concrete_slab": "Red Concrete Slab",
+  "block.communityupdate.black_concrete_slab": "Black Concrete Slab",
+
 
   "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
   "itemGroup.communityupdate": "The Community Update"

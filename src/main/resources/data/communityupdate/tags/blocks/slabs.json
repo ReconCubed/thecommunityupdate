@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "communityupdate:white_concrete_slab",
+    "communityupdate:orange_concrete_slab",
+    "communityupdate:magenta_concrete_slab",
+    "communityupdate:light_blue_concrete_slab",
+    "communityupdate:yellow_concrete_slab",
+    "communityupdate:lime_concrete_slab",
+    "communityupdate:pink_concrete_slab",
+    "communityupdate:gray_concrete_slab",
+    "communityupdate:light_gray_concrete_slab",
+    "communityupdate:cyan_concrete_slab",
+    "communityupdate:blue_concrete_slab",
+    "communityupdate:purple_concrete_slab",
+    "communityupdate:green_concrete_slab",
+    "communityupdate:brown_concrete_slab",
+    "communityupdate:red_concrete_slab",
+    "communityupdate:black_concrete_slab"
+  ]
+}

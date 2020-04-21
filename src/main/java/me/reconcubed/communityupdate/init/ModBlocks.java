@@ -2,10 +2,7 @@ package me.reconcubed.communityupdate.init;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.block.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -54,14 +51,11 @@ public class ModBlocks {
                     .sound(SoundType.GLASS)));
 
     /**
-     *      ----------------    CONCRETE STAIRS    ----------------
+     * ----------------    CONCRETE STAIRS    ----------------
      */
 
     public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = BLOCKS.register("white_concrete_stairs", () -> new StairsBlock(Blocks.WHITE_CONCRETE::getDefaultState,
             Block.Properties.from(Blocks.WHITE_CONCRETE)));
-
-    public static final RegistryObject<Block> BLACK_CONCRETE_STAIRS = BLOCKS.register("black_concrete_stairs", () -> new StairsBlock(Blocks.BLACK_CONCRETE::getDefaultState,
-            Block.Properties.from(Blocks.BLACK_CONCRETE)));
 
     public static final RegistryObject<Block> ORANGE_CONCRETE_STAIRS = BLOCKS.register("orange_concrete_stairs", () -> new StairsBlock(Blocks.ORANGE_CONCRETE::getDefaultState,
             Block.Properties.from(Blocks.ORANGE_CONCRETE)));
@@ -101,5 +95,43 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> RED_CONCRETE_STAIRS = BLOCKS.register("red_concrete_stairs", () -> new StairsBlock(Blocks.RED_CONCRETE::getDefaultState,
             Block.Properties.from(Blocks.RED_CONCRETE)));
+
+    public static final RegistryObject<Block> BLACK_CONCRETE_STAIRS = BLOCKS.register("black_concrete_stairs", () -> new StairsBlock(Blocks.BLACK_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.BLACK_CONCRETE)));
+
+    /**
+     * ----------------    CONCRETE SLABS    ----------------
+     */
+
+    public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = BLOCKS.register("white_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.WHITE_CONCRETE)));
+
+    public static final RegistryObject<Block> ORANGE_CONCRETE_SLAB = BLOCKS.register("orange_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.ORANGE_CONCRETE)));
+
+    public static final RegistryObject<Block> MAGENTA_CONCRETE_SLAB = BLOCKS.register("magenta_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.MAGENTA_CONCRETE)));
+
+    public static final RegistryObject<Block> LIGHT_BLUE_CONCRETE_SLAB = BLOCKS.register("light_blue_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.LIGHT_BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> YELLOW_CONCRETE_SLAB = BLOCKS.register("yellow_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.YELLOW_CONCRETE)));
+
+    public static final RegistryObject<Block> LIME_CONCRETE_SLAB = BLOCKS.register("lime_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.LIME_CONCRETE)));
+
+    public static final RegistryObject<Block> PINK_CONCRETE_SLAB = BLOCKS.register("pink_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.PINK_CONCRETE)));
+
+    public static final RegistryObject<Block> GRAY_CONCRETE_SLAB = BLOCKS.register("gray_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.GRAY_CONCRETE)));
+
+    public static final RegistryObject<Block> LIGHT_GRAY_CONCRETE_SLAB = BLOCKS.register("light_gray_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.LIGHT_GRAY_CONCRETE)));
+
+    public static final RegistryObject<Block> BLUE_CONCRETE_SLAB = BLOCKS.register("blue_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> PURPLE_CONCRETE_SLAB = BLOCKS.register("purple_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.PURPLE_CONCRETE)));
+
+    public static final RegistryObject<Block> GREEN_CONCRETE_SLAB = BLOCKS.register("green_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.GREEN_CONCRETE)));
+
+    public static final RegistryObject<Block> BROWN_CONCRETE_SLAB = BLOCKS.register("brown_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.BROWN_CONCRETE)));
+
+    public static final RegistryObject<Block> RED_CONCRETE_SLAB = BLOCKS.register("red_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.RED_CONCRETE)));
+
+    public static final RegistryObject<Block> BLACK_CONCRETE_SLAB = BLOCKS.register("black_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.BLACK_CONCRETE)));
+
 
 }
