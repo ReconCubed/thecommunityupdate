@@ -1,0 +1,102 @@
+{
+	"credit": "ReconCubed",
+	"textures": {
+		"0": "minecraft:block/beacon",
+		"1": "minecraft:block/stone_bricks",
+		"2": "minecraft:block/iron_bars",
+		"particle": "minecraft:block/stone_bricks"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 2, 14],
+			"faces": {
+				"north": {"uv": [2, 14, 14, 16], "texture": "#1"},
+				"east": {"uv": [2, 14, 14, 16], "texture": "#1"},
+				"south": {"uv": [2, 14, 14, 16], "texture": "#1"},
+				"west": {"uv": [2, 14, 14, 16], "texture": "#1"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#1"},
+				"down": {"uv": [1, 2, 13, 14], "texture": "#1", "cullface": "down"}
+			}
+		},
+		{
+			"from": [3, 2, 3],
+			"to": [13, 18, 13],
+			"faces": {
+				"north": {"uv": [3, 0, 13, 15], "texture": "#1"},
+				"east": {"uv": [3, 0, 13, 15], "texture": "#1"},
+				"south": {"uv": [3, 0, 13, 15], "texture": "#1"},
+				"west": {"uv": [3, 0, 13, 15], "texture": "#1"}
+			}
+		},
+		{
+			"from": [1, 18, 1],
+			"to": [15, 21, 15],
+			"faces": {
+				"north": {"uv": [1, 2, 15, 5], "texture": "#1", "cullface": "up"},
+				"east": {"uv": [1, 3, 15, 6], "texture": "#1", "cullface": "up"},
+				"south": {"uv": [1, 1, 15, 4], "texture": "#1", "cullface": "up"},
+				"west": {"uv": [1, 3, 15, 6], "texture": "#1", "cullface": "up"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#1", "cullface": "up"},
+				"down": {"uv": [0, 0, 14, 14], "texture": "#1", "cullface": "up"}
+			}
+		},
+		{
+			"from": [13.5, 21, 2.5],
+			"to": [13.5, 30, 13.5],
+			"faces": {
+				"east": {"uv": [2, 7, 13, 16], "texture": "#2", "cullface": "up"},
+				"west": {"uv": [2, 0, 13, 9], "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [2.5, 21, 2.5],
+			"to": [2.5, 30, 13.5],
+			"faces": {
+				"east": {"uv": [2, 0, 13, 9], "texture": "#2", "cullface": "up"},
+				"west": {"uv": [2, 6, 13, 15], "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [2.5, 21, 13.5],
+			"to": [13.5, 30, 13.5],
+			"faces": {
+				"north": {"uv": [2, 0, 13, 9], "texture": "#2", "cullface": "up"},
+				"south": {"uv": [3, 7, 14, 16], "rotation": 180, "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [2.5, 30, 2.5],
+			"to": [13.5, 30, 13.5],
+			"faces": {
+				"up": {"uv": [2, 0, 13, 11], "rotation": 270, "texture": "#2", "cullface": "up"},
+				"down": {"uv": [2, 5, 13, 16], "rotation": 90, "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [4, 21, 4],
+			"to": [12, 29, 12],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "texture": "#0", "cullface": "up"},
+				"east": {"uv": [4, 4, 12, 12], "texture": "#0", "cullface": "up"},
+				"south": {"uv": [4, 4, 12, 12], "texture": "#0", "cullface": "up"},
+				"west": {"uv": [4, 4, 12, 12], "texture": "#0", "cullface": "up"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#0", "cullface": "up"}
+			}
+		},
+		{
+			"from": [2.5, 21, 2.5],
+			"to": [13.5, 30, 2.5],
+			"faces": {
+				"north": {"uv": [3, 1, 14, 10], "texture": "#2", "cullface": "up"},
+				"south": {"uv": [2, 0, 13, 9], "texture": "#2", "cullface": "up"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "VoxelShapes",
+			"origin": [8, 8, 8],
+			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+		}, 8]
+}

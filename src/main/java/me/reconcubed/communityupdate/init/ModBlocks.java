@@ -50,6 +50,11 @@ public class ModBlocks {
                     .hardnessAndResistance(0.3F)
                     .sound(SoundType.GLASS)));
 
+    public static final RegistryObject<Block> LANDMARK = BLOCKS.register("landmark", () -> new LandmarkBlock(
+            Block.Properties.create(Material.ROCK)
+                    .lightValue(7)
+                    .hardnessAndResistance(1.5F, 9.0F)
+                    .sound(SoundType.STONE)));
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
