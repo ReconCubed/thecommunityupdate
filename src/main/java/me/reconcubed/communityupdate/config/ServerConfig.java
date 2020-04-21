@@ -41,7 +41,7 @@ public class ServerConfig {
         spawnRadius = builder
                 .comment("The minimum distance Hexed Earth has to be away from players before it begins spawning mobs.")
                 .defineInRange("spawn radius", 1, 1, Integer.MAX_VALUE);
-
+// TODO Add chunk loader panic option that automatically disables all chunk loaders
         builder.pop();
     }
 }

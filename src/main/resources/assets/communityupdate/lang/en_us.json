@@ -43,7 +43,9 @@
   "block.communityupdate.red_concrete_slab": "Red Concrete Slab",
   "block.communityupdate.black_concrete_slab": "Black Concrete Slab",
 
-
+  "command.communityupdate.chunkload.single": "A force loaded chunk was found in %s at: %s",
+  "command.communityupdate.chunkload.multiple": "%s force loaded chunks were found in %s at: %s",
+  "command.communityupdate.chunkload.none": "No force loaded chunks were found in %s",
   "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
   "itemGroup.communityupdate": "The Community Update"
 }
