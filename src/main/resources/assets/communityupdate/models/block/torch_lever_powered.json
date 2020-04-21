@@ -2,7 +2,7 @@
     "ambientocclusion": false,
     "textures": {
         "torch": "minecraft:block/torch",
-        "particle": "#torch"
+        "particle": "minecraft:block/torch"
     },
     "elements": [
         {   "from": [ -1, 3.5, 7 ],
