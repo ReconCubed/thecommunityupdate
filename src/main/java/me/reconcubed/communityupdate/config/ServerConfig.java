@@ -14,6 +14,8 @@ public class ServerConfig {
     public static ForgeConfigSpec.IntValue spawnRadius;
     public static ForgeConfigSpec.BooleanValue witherRose;
 
+    public static ForgeConfigSpec.IntValue minersCampGenerateChance;
+
     ServerConfig(ForgeConfigSpec.Builder builder) {
         builder.push("general");
 
@@ -41,6 +43,11 @@ public class ServerConfig {
         spawnRadius = builder
                 .comment("The minimum distance Hexed Earth has to be away from players before it begins spawning mobs.")
                 .defineInRange("spawn radius", 1, 1, Integer.MAX_VALUE);
+
+        minersCampGenerateChance = builder
+                .comment("The chance of the Miner's Camp generating. 1 out of configured value")
+                .defineInRange("miners camp generate chance", 1, 1, Integer.MAX_VALUE);
+
 
         builder.pop();
     }
