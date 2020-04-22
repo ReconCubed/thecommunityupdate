@@ -61,6 +61,48 @@ public class ModBlocks {
                     .hardnessAndResistance(1.0F)
                     .sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> COBBLESTONE_PATH = BLOCKS.register("cobblestone_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ANDESITE_PATH = BLOCKS.register("andesite_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> GRANITE_PATH = BLOCKS.register("granite_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> DIORITE_PATH = BLOCKS.register("diorite_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> MOSSY_COBBLESTONE_PATH = BLOCKS.register("mossy_cobblestone_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> STONE_PATH = BLOCKS.register("stone_path", () -> new PathBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(0.6F, 6.0F)
+                    .doesNotBlockMovement()
+                    .noDrops()
+                    .sound(SoundType.STONE)));
+
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
