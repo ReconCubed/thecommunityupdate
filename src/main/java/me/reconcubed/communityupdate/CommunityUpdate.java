@@ -3,6 +3,7 @@ package me.reconcubed.communityupdate;
 import me.reconcubed.communityupdate.config.ConfigHolder;
 import me.reconcubed.communityupdate.config.ServerConfig;
 import me.reconcubed.communityupdate.init.ModBlocks;
+import me.reconcubed.communityupdate.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -33,6 +34,9 @@ public class CommunityUpdate {
     public static final Tag<EntityType<?>> blacklisted_entities = new EntityTypeTags.Wrapper(new ResourceLocation(MODID, "blacklisted"));
     public static final Tag<Block> spreadable = new BlockTags.Wrapper(new ResourceLocation(MODID, "spreadable"));
 
+
+    public static final Tag<Block> paths = new BlockTags.Wrapper(new ResourceLocation(MODID, "paths"));
+
     final ModLoadingContext modLoadingContext = ModLoadingContext.get();
     final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -43,7 +47,7 @@ public class CommunityUpdate {
     public CommunityUpdate() {
         // Register Deferred Registers (Does not need to be before Configs)
         ModBlocks.BLOCKS.register(modEventBus);
-//        ModItems.ITEMS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
 //        ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 //        ModEntityTypes.ENTITY_TYPES.register(modEventBus);
 //        ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);

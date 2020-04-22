@@ -12,6 +12,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Objects;
+import java.util.function.Predicate;
+
 @EventBusSubscriber(modid = CommunityUpdate.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
     private static final Logger LOGGER = LogManager.getLogger(CommunityUpdate.MODID + " Mod Event Subscriber");
@@ -26,6 +29,9 @@ public class ModEventSubscriber {
         // Automatically register BlockItems for all our Blocks
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
+                .filter(Objects::nonNull)
+//                .filter(block -> block.isIn(CommunityUpdate.paths))
+                .filter(block -> !block.isIn(CommunityUpdate.paths))
                 // You can do extra filtering here if you don't want some blocks to have an BlockItem automatically registered for them
                 // .filter(block -> needsItemBlock(block))
                 // Register the BlockItem for the block
@@ -40,5 +46,9 @@ public class ModEventSubscriber {
                     registry.register(blockItem);
                 });
         LOGGER.debug("Registered BlockItems");
+    }
+
+    public static <R> Predicate<R> not(Predicate<R> predicate) {
+        return predicate.negate();
     }
 }
