@@ -44,6 +44,13 @@
   "block.communityupdate.red_concrete_slab": "Red Concrete Slab",
   "block.communityupdate.black_concrete_slab": "Black Concrete Slab",
 
+  "block.communityupdate.cobblestone_path": "Cobblestone Path",
+  "block.communityupdate.mossy_cobblestone_path": "Mossy Cobblestone Path",
+  "block.communityupdate.diorite_path": "Diorite Path",
+  "block.communityupdate.granite_path": "Granite Path",
+  "block.communityupdate.andesite_path": "Andesite Path",
+  "block.communityupdate.stone_path": "Stone Path",
+
   "command.communityupdate.chunkload.single": "§6A force loaded chunk was found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.multiple": "§6%s force loaded chunks were found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.none": "§6No force loaded chunks were found in §c %s",

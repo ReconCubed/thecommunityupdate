@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "communityupdate:cobblestone_path",
+    "communityupdate:mossy_cobblestone_path",
+    "communityupdate:diorite_path",
+    "communityupdate:granite_path",
+    "communityupdate:stone_path",
+    "communityupdate:andesite_path"
+  ]
+}
