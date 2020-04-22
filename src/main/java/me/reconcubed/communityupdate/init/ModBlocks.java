@@ -56,6 +56,11 @@ public class ModBlocks {
                     .hardnessAndResistance(1.5F, 9.0F)
                     .sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> WISHING_WELL = BLOCKS.register("wishing_well", () -> new WishingWellBlock(
+            Block.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(1.0F)
+                    .sound(SoundType.STONE)));
+
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
