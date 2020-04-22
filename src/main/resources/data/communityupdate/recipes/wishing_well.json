@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#W#",
+    "#W#",
+    "B#B"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:white_terracotta"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "B": {
+      "item": "minecraft:blue_terracotta"
+    }
+  },
+  "result": {
+    "item": "communityupdate:wishing_well",
+    "count": 1
+  }
+}
