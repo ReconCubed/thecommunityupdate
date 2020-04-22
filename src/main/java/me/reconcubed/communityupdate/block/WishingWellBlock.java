@@ -61,22 +61,25 @@ public class WishingWellBlock extends Block {
             ItemStack itemStack = ((ItemEntity) entityIn).getItem();
             Item item = itemStack.getItem();
             UUID thrower = ((ItemEntity) entityIn).getThrowerId();
-            PlayerEntity player = worldIn.getPlayerByUuid(thrower);
+            if (thrower != null) {
+                PlayerEntity player = worldIn.getPlayerByUuid(thrower);
 
-            if (item == Items.GOLD_NUGGET) {
-                assert player != null;
-                player.addPotionEffect(new EffectInstance(Effects.LUCK, 2000, 1, false, false));
-                entityIn.remove();
-            } else if (item == Items.GOLD_INGOT) {
-                assert player != null;
-                player.addPotionEffect(new EffectInstance(Effects.LUCK, 3500, 1, false, false));
-                entityIn.remove();
-            } else if (item == Items.GOLD_BLOCK) {
-                assert player != null;
-                player.addPotionEffect(new EffectInstance(Effects.LUCK, 10000, 2, false, false));
-                entityIn.remove();
+                if (item == Items.GOLD_NUGGET) {
+                    this.addLuck(player, entityIn, 2000, 1, worldIn, pos);
+                } else if (item == Items.GOLD_INGOT) {
+                    this.addLuck(player, entityIn, 3500, 2, worldIn, pos);
+                } else if (item == Items.GOLD_BLOCK) {
+                    this.addLuck(player, entityIn, 10000, 2, worldIn, pos);
+                }
             }
         }
+    }
+
+    private void addLuck(PlayerEntity player, Entity entityIn, int duration, int amplifier, World worldIn, BlockPos pos) {
+        assert player != null;
+        player.addPotionEffect(new EffectInstance(Effects.LUCK, duration, amplifier, false, false));
+        worldIn.playSound((PlayerEntity) null, pos, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 0.3F, 0.6F);
+        entityIn.remove();
     }
 
     @Override
