@@ -55,6 +55,7 @@ public class ModBlocks {
                     .lightValue(7)
                     .hardnessAndResistance(1.5F, 9.0F)
                     .sound(SoundType.STONE)));
+
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
@@ -70,6 +71,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> LIGHT_BLUE_CONCRETE_STAIRS = BLOCKS.register("light_blue_concrete_stairs", () -> new StairsBlock(Blocks.LIGHT_BLUE_CONCRETE::getDefaultState,
             Block.Properties.from(Blocks.LIGHT_BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> CYAN_CONCRETE_STAIRS = BLOCKS.register("cyan_concrete_stairs", () -> new StairsBlock(Blocks.CYAN_CONCRETE::getDefaultState,
+            Block.Properties.from(Blocks.CYAN_CONCRETE)));
 
     public static final RegistryObject<Block> YELLOW_CONCRETE_STAIRS = BLOCKS.register("yellow_concrete_stairs", () -> new StairsBlock(Blocks.YELLOW_CONCRETE::getDefaultState,
             Block.Properties.from(Blocks.YELLOW_CONCRETE)));
@@ -115,6 +119,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAGENTA_CONCRETE_SLAB = BLOCKS.register("magenta_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.MAGENTA_CONCRETE)));
 
     public static final RegistryObject<Block> LIGHT_BLUE_CONCRETE_SLAB = BLOCKS.register("light_blue_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.LIGHT_BLUE_CONCRETE)));
+
+    public static final RegistryObject<Block> CYAN_CONCRETE_SLAB = BLOCKS.register("cyan_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.CYAN_CONCRETE)));
 
     public static final RegistryObject<Block> YELLOW_CONCRETE_SLAB = BLOCKS.register("yellow_concrete_slab", () -> new SlabBlock(Block.Properties.from(Blocks.YELLOW_CONCRETE)));
 
