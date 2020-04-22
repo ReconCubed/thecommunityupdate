@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 
 public final class ModItemGroups {
 
-    public static final ItemGroup COMMUNITY_UPDATE_ITEM_GROUP = new ModItemGroup(CommunityUpdate.MODID, () -> new ItemStack(ModBlocks.VEXED_EARTH.get()));
+    public static final ItemGroup COMMUNITY_UPDATE_ITEM_GROUP = new ModItemGroup(CommunityUpdate.MODID, () -> new ItemStack(ModBlocks.LANDMARK.get()));
 
     public static final class ModItemGroup extends ItemGroup {
 
