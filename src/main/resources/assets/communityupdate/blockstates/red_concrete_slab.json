@@ -1,1 +1,1 @@
-{"variants": {"type=bottom": {"model": "communityupdate:block/red_concrete_slab"}, "type=top": {"model": "communityupdate:block/red_concrete_slab_top"}, "type=double": {"model": "minecraft:block/red_concrete"}}}
+{"variants": {"type=bottom": {"model": "communityupdate:block/slab/red_concrete_slab"}, "type=top": {"model": "communityupdate:block/slab/red_concrete_slab_top"}, "type=double": {"model": "minecraft:block/red_concrete"}}}

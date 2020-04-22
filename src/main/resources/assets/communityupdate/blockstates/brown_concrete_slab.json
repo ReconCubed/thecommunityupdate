@@ -1,1 +1,1 @@
-{"variants": {"type=bottom": {"model": "communityupdate:block/brown_concrete_slab"}, "type=top": {"model": "communityupdate:block/brown_concrete_slab_top"}, "type=double": {"model": "minecraft:block/brown_concrete"}}}
+{"variants": {"type=bottom": {"model": "communityupdate:block/slab/brown_concrete_slab"}, "type=top": {"model": "communityupdate:block/slab/brown_concrete_slab_top"}, "type=double": {"model": "minecraft:block/brown_concrete"}}}
