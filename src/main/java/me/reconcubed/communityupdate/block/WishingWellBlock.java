@@ -2,10 +2,14 @@ package me.reconcubed.communityupdate.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
@@ -19,6 +23,7 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class WishingWellBlock extends Block {
@@ -49,6 +54,30 @@ public class WishingWellBlock extends Block {
         return SHAPE;
     }
 
+    @Override
+    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+        if(worldIn.isRemote) return;
+        if (entityIn instanceof ItemEntity) {
+            ItemStack itemStack = ((ItemEntity) entityIn).getItem();
+            Item item = itemStack.getItem();
+            UUID thrower = ((ItemEntity) entityIn).getThrowerId();
+            PlayerEntity player = worldIn.getPlayerByUuid(thrower);
+
+            if (item == Items.GOLD_NUGGET) {
+                assert player != null;
+                player.addPotionEffect(new EffectInstance(Effects.LUCK, 2000, 1, false, false));
+                entityIn.remove();
+            } else if (item == Items.GOLD_INGOT) {
+                assert player != null;
+                player.addPotionEffect(new EffectInstance(Effects.LUCK, 3500, 1, false, false));
+                entityIn.remove();
+            } else if (item == Items.GOLD_BLOCK) {
+                assert player != null;
+                player.addPotionEffect(new EffectInstance(Effects.LUCK, 10000, 2, false, false));
+                entityIn.remove();
+            }
+        }
+    }
 
     @Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
