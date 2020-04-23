@@ -13,7 +13,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
-import java.util.function.Predicate;
 
 @EventBusSubscriber(modid = CommunityUpdate.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
@@ -46,9 +45,5 @@ public class ModEventSubscriber {
                     registry.register(blockItem);
                 });
         LOGGER.debug("Registered BlockItems");
-    }
-
-    public static <R> Predicate<R> not(Predicate<R> predicate) {
-        return predicate.negate();
     }
 }
