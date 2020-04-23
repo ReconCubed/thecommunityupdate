@@ -6,7 +6,9 @@ import me.reconcubed.communityupdate.init.ModBlocks;
 import me.reconcubed.communityupdate.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.tags.BlockTags;
@@ -15,9 +17,13 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.FakePlayerFactory;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -30,7 +36,7 @@ import org.apache.logging.log4j.Logger;
 public class CommunityUpdate {
     public static final String MODID = "communityupdate";
 
-//    Hexed Earth
+//    Vexed Earth
     public static final Tag<EntityType<?>> blacklisted_entities = new EntityTypeTags.Wrapper(new ResourceLocation(MODID, "blacklisted"));
     public static final Tag<Block> spreadable = new BlockTags.Wrapper(new ResourceLocation(MODID, "spreadable"));
 
@@ -62,7 +68,20 @@ public class CommunityUpdate {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    @SubscribeEvent
+    public void onLivingDeath(LivingDeathEvent event) {
+        Entity entity = event.getEntity();
+        if (!ServerConfig.mobsAlwaysDropXp.get()) return;
+        if (entity.world.isRemote) return;
+        if (!(entity instanceof LivingEntity)) return;
 
+        LivingEntity livingEntity = (LivingEntity) entity;
+
+        if (livingEntity.recentlyHit <= 0) livingEntity.recentlyHit = 60;
+        if (livingEntity.attackingPlayer == null) {
+            livingEntity.attackingPlayer = FakePlayerFactory.getMinecraft(((ServerWorld) entity.world));
+        }
+    }
 
     private void useRoseOnDirt(PlayerInteractEvent.RightClickBlock e) {
         if (!ServerConfig.witherRose.get()) return;
