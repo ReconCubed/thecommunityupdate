@@ -51,6 +51,14 @@
   "block.communityupdate.andesite_path": "Andesite Path",
   "block.communityupdate.stone_path": "Stone Path",
 
+  "item.communityupdate.cobblestone_pebbles": "Bag of Cobblestone Pebbles",
+  "item.communityupdate.stone_pebbles": "Bag of Stone Pebbles",
+  "item.communityupdate.mossy_cobblestone_pebbles": "Bag of Mossy Cobblestone Pebbles",
+  "item.communityupdate.andesite_pebbles": "Bag of Andesite Pebbles",
+  "item.communityupdate.diorite_pebbles": "Bag of Diorite Pebbles",
+  "item.communityupdate.granite_pebbles": "Bag of Granite Pebbles",
+
+
   "command.communityupdate.chunkload.single": "§6A force loaded chunk was found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.multiple": "§6%s force loaded chunks were found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.none": "§6No force loaded chunks were found in §c %s",
