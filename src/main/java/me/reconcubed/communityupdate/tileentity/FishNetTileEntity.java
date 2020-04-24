@@ -103,6 +103,14 @@ public class FishNetTileEntity extends TileEntity implements ITickableTileEntity
 
     private void useFishingRod() {
         ItemStack fishingRod = this.getInventory().getStackInSlot(0);
+
+        int min = (int) this.minTick;
+        int max = (int) this.maxTick;
+        int lure = EnchantmentHelper.getFishingSpeedBonus(fishingRod);
+        int speedBonus = min + (lure * 100);
+        this.waitTime = (long) this.world.rand.nextInt(max - speedBonus + 1);
+
+
         LootContext.Builder lootContextBuilder = (new LootContext.Builder((ServerWorld) this.world))
                 .withParameter(LootParameters.POSITION, new BlockPos(pos))
                 .withParameter(LootParameters.TOOL, fishingRod)
@@ -115,15 +123,11 @@ public class FishNetTileEntity extends TileEntity implements ITickableTileEntity
         inventory.getItemHandler().addListToInventory(list);
 
         if (fishingRod.getItem() == Items.FISHING_ROD) {
-            fishingRod.attemptDamageItem(1, world.rand, null);
-            markDirty();
+            if(fishingRod.attemptDamageItem(1, world.rand, null)) {
+                inventory.setInventorySlotContents(0, ItemStack.EMPTY);
+                markDirty();
+            }
         }
-
-        int min = (int) this.minTick;
-        int max = (int) this.maxTick;
-
-        this.waitTime = (long) this.world.rand.nextInt(max - min + 1);
-
     }
 
 

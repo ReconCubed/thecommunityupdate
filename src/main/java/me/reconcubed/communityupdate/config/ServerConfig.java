@@ -53,11 +53,11 @@ public class ServerConfig {
 
         fishNetMinTickTime = builder
                 .comment("The minimum time in ticks between the fishing net attempting to fish.")
-                .defineInRange("fish net min tick time", 450, 450, Long.MAX_VALUE);
+                .defineInRange("fish net min tick time", 400, 20, Long.MAX_VALUE);
 
         fishNetMaxTickTime = builder
                 .comment("The maximum time in ticks between the fishing net attempting to fish.")
-                .defineInRange("fish net max tick time", 800, 750, Long.MAX_VALUE);
+                .defineInRange("fish net max tick time", 1000, 400, Long.MAX_VALUE);
 
 
 // TODO Add chunk loader panic option that automatically disables all chunk loaders
