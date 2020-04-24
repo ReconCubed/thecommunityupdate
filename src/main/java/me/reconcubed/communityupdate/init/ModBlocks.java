@@ -103,6 +103,11 @@ public class ModBlocks {
                     .noDrops()
                     .sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> FISH_NET = BLOCKS.register("fish_net", () -> new FishNetBlock(
+            Block.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.6F)
+                    .sound(SoundType.WOOD)));
+
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
