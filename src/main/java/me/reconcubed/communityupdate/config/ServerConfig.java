@@ -16,6 +16,9 @@ public class ServerConfig {
 
     public static ForgeConfigSpec.BooleanValue mobsAlwaysDropXp;
 
+    public static ForgeConfigSpec.LongValue fishNetMinTickTime;
+    public static ForgeConfigSpec.LongValue fishNetMaxTickTime;
+
     ServerConfig(ForgeConfigSpec.Builder builder) {
         builder.push("general");
 
@@ -47,6 +50,16 @@ public class ServerConfig {
         mobsAlwaysDropXp = builder
                 .comment("Do mobs drop XP and other rare items regardless if a player kills them or not?")
                 .define("mobs always drop xp", true);
+
+        fishNetMinTickTime = builder
+                .comment("The minimum time in ticks between the fishing net attempting to fish.")
+                .defineInRange("fish net min tick time", 450, 450, Long.MAX_VALUE);
+
+        fishNetMaxTickTime = builder
+                .comment("The maximum time in ticks between the fishing net attempting to fish.")
+                .defineInRange("fish net max tick time", 800, 750, Long.MAX_VALUE);
+
+
 // TODO Add chunk loader panic option that automatically disables all chunk loaders
         builder.pop();
     }

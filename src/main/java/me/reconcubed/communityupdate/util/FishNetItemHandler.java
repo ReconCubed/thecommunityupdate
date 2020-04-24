@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraftforge.items.IItemHandler;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 public class FishNetItemHandler implements IItemHandler {
     public FishNetTileEntity fishNetTileEntity;
@@ -82,5 +83,15 @@ public class FishNetItemHandler implements IItemHandler {
             return stack.getItem() == Items.FISHING_ROD;
         }
         return true;
+    }
+
+    public void addListToInventory(List<ItemStack> list) {
+        list.forEach(itemStack -> {
+            for(int i = 1; i <= fishNetTileEntity.getInventory().getContents().size() - 1; i++) {
+                if(insertItem(i, itemStack, false) == ItemStack.EMPTY) {
+                    break;
+                }
+            }
+        });
     }
 }
