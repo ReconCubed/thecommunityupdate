@@ -52,11 +52,11 @@ public class ServerConfig {
                 .define("mobs always drop xp", true);
 
         fishNetMinTickTime = builder
-                .comment("The minimum time in ticks between the fishing net attempting to fish.")
+                .comment("The minimum time in ticks between fishing attempts in a fishing net.")
                 .defineInRange("fish net min tick time", 1000, 20, Long.MAX_VALUE);
 
         fishNetMaxTickTime = builder
-                .comment("The maximum time in ticks between the fishing net attempting to fish.")
+                .comment("The maximum time in ticks between fishing attempts in a fishing net.")
                 .defineInRange("fish net max tick time", 3000, 400, Long.MAX_VALUE);
 
 
