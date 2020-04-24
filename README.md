@@ -2,7 +2,6 @@
 ### The Community Update takes the best suggestions from the community that fit into the vanilla game, and compiles them into one mod.
 
 #### [CurseForge Download Link](https://www.curseforge.com/minecraft/mc-mods/the-community-update)
-#### [Latest Pre-Releases](https://github.com/ReconCubed/thecommunityupdate/releases)
 
 **To suggest a new feature, [click here](https://github.com/ReconCubed/thecommunityupdate/issues) and submit a new issue with the ENHANCEMENT label.**
 
