@@ -62,9 +62,7 @@ public class CommunityUpdate {
     @SubscribeEvent
     public void onLivingDeath(LivingDeathEvent event) {
         Entity entity = event.getEntity();
-        if (!ServerConfig.mobsAlwaysDropXp.get()) return;
-        if (entity.world.isRemote) return;
-        if (!(entity instanceof LivingEntity)) return;
+        if (!ServerConfig.mobsAlwaysDropXp.get() || entity.world.isRemote || !(entity instanceof LivingEntity)) return;
 
         LivingEntity livingEntity = (LivingEntity) entity;
 
