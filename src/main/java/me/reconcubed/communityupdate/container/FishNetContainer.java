@@ -1,8 +1,6 @@
 package me.reconcubed.communityupdate.container;
 
-import me.reconcubed.communityupdate.init.ModBlocks;
 import me.reconcubed.communityupdate.init.ModContainerTypes;
-import me.reconcubed.communityupdate.init.ModTileEntityTypes;
 import me.reconcubed.communityupdate.tileentity.FishNetTileEntity;
 import me.reconcubed.communityupdate.util.FishingRodSlot;
 import me.reconcubed.communityupdate.util.OutputSlot;
@@ -16,14 +14,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IWorldPosCallable;
 
 import java.util.Objects;
 
 public class FishNetContainer extends Container {
     private final FishNetTileEntity tileEntity;
     private final IInventory inventory;
-//    private final IWorldPosCallable canInteractWithCallable;
     private final PlayerInventory playerInventory;
 
     public FishNetContainer(int windowId, PlayerInventory playerInventory, FishNetTileEntity tileEntity) {
@@ -31,7 +27,6 @@ public class FishNetContainer extends Container {
         this.tileEntity = tileEntity;
         this.playerInventory = playerInventory;
         this.inventory = tileEntity.getInventory();
-//        this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
 
         int slotNum = 0;
 
@@ -98,7 +93,6 @@ public class FishNetContainer extends Container {
 
     @Override
     public boolean canInteractWith(PlayerEntity playerIn) {
-//        return isWithinUsableDistance(canInteractWithCallable, playerIn, ModBlocks.FISH_NET.get());
         return this.inventory.isUsableByPlayer(playerIn);
     }
 

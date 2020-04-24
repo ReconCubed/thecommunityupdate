@@ -56,18 +56,10 @@ public class FishNetBlock extends ContainerBlock implements IWaterLoggable {
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote) {
             TileEntity tileEntity = worldIn.getTileEntity(pos);
-
             if (tileEntity instanceof FishNetTileEntity) {
                 NetworkHooks.openGui((ServerPlayerEntity) player, (FishNetTileEntity) tileEntity, pos);
                 return true;
             }
-
-//            INamedContainerProvider containerProvider = getContainer(state, worldIn, pos);
-//
-//            if (containerProvider != null) {
-//                player.openContainer(containerProvider);
-//                return true;
-//            }
         }
         return false;
     }
