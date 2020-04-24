@@ -104,7 +104,7 @@ public class ModBlocks {
                     .sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> FISH_NET = BLOCKS.register("fish_net", () -> new FishNetBlock(
-            Block.Properties.create(Material.GLASS)
+            Block.Properties.create(Material.WOOD)
                     .hardnessAndResistance(0.6F)
                     .sound(SoundType.WOOD)));
 

@@ -1,6 +1,5 @@
 {
 	"credit": "ReconCubed",
-	"parent": "minecraft:block/block",
 	"textures": {
 		"0": "minecraft:block/oak_planks",
 		"particle": "minecraft:block/oak_planks"
