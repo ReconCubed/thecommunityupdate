@@ -2,10 +2,7 @@ package me.reconcubed.communityupdate.block;
 
 import me.reconcubed.communityupdate.init.ModTileEntityTypes;
 import me.reconcubed.communityupdate.tileentity.FishNetTileEntity;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ContainerBlock;
-import net.minecraft.block.IWaterLoggable;
+import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluids;
@@ -39,6 +36,11 @@ public class FishNetBlock extends ContainerBlock implements IWaterLoggable {
     @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
     @Nullable
