@@ -1,30 +1,16 @@
 package me.reconcubed.communityupdate.item;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.StringNBT;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.*;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.Constants;
-
-import javax.annotation.Nullable;
-import javax.swing.*;
 import java.util.*;
-import java.util.stream.Stream;
 
 public class LoreTagItem extends Item {
 
@@ -71,7 +57,9 @@ public class LoreTagItem extends Item {
 
 
         for (int i  = 0; i < storage.size(); i++) {
-            String serialiser = ITextComponent.Serializer.toJson(storage.get(i).toFormattedComponent());
+            ITextComponent line = storage.get(i).toFormattedComponent().applyTextStyle(TextFormatting.GREEN);
+            String serialiser = ITextComponent.Serializer.toJson(line).replaceAll("^\"|\"$", "");
+//            serialiser.replaceAll("^\"|\"$", "");
             lore.add(new StringNBT(serialiser));
         }
 
