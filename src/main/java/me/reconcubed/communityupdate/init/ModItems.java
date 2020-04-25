@@ -1,6 +1,7 @@
 package me.reconcubed.communityupdate.init;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
+import me.reconcubed.communityupdate.item.LoreTagItem;
 import me.reconcubed.communityupdate.item.PebbleBagBaseItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
@@ -39,5 +40,10 @@ public class ModItems {
             .group(ModItemGroups.COMMUNITY_UPDATE_ITEM_GROUP)
             .maxStackSize(1)
             .defaultMaxDamage(64)));
+
+    public static final RegistryObject<Item> LORE_TAG = ITEMS.register("lore_tag", () -> new LoreTagItem(new Item.Properties()
+            .group(ModItemGroups.COMMUNITY_UPDATE_ITEM_GROUP)
+            .maxStackSize(1)));
+
 
 }

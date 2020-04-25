@@ -12,18 +12,27 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
+import net.minecraft.nbt.ListNBT;
+import net.minecraft.nbt.StringNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayerFactory;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.AnvilRepairEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -32,6 +41,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 @Mod(CommunityUpdate.MODID)
 public class CommunityUpdate {
@@ -74,6 +84,60 @@ public class CommunityUpdate {
         }
     }
 
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onCombinationComplete(AnvilRepairEvent event) {
+        if (event.getIngredientInput() != null && event.getIngredientInput().getItem().equals(ModItems.LORE_TAG.get()) && event.getIngredientInput().getCount() > 1) {
+            ItemStack newInput = event.getIngredientInput().copy();
+            newInput.shrink(1);
+
+            if (!event.getPlayer().inventory.addItemStackToInventory(newInput)) {
+                event.getPlayer().dropItem(newInput, false);
+            }
+
+        }
+    }
+
+    @SubscribeEvent
+    public void onAnvilUpdate(AnvilUpdateEvent event) {
+        if (event.getRight().getItem().equals(ModItems.LORE_TAG.get()) && event.getRight().getTag().contains("loreStorage") && !event.getLeft().getItem().equals(ModItems.LORE_TAG.get())) {
+            ItemStack tag = event.getRight();
+            ItemStack input = event.getLeft();
+            ItemStack output = input.copy();
+
+            CompoundNBT outputTag;
+            if (output.hasTag()) {
+                outputTag = output.getTag();
+            } else {
+                outputTag = new CompoundNBT();
+            }
+
+            ListNBT lore = tag.getTag().getCompound("loreStorage").getList("lore", 8);
+            ListNBT newLore = new ListNBT();
+
+            for (INBT inbt : lore) {
+                String serialiser = ITextComponent.Serializer.toJson(inbt.toFormattedComponent());
+                newLore.add(new StringNBT(serialiser));
+            }
+
+            CompoundNBT display;
+            if (outputTag.contains("display")) {
+                display = outputTag.getCompound("display");
+                display.put("Lore", newLore);
+            } else {
+                display = new CompoundNBT();
+                display.put("Lore", newLore);
+            }
+
+            outputTag.put("display", display);
+
+            output.setTag(outputTag);
+
+            event.setOutput(output);
+            event.setCost(1);
+        }
+    }
+
+
     private void useRoseOnDirt(PlayerInteractEvent.RightClickBlock e) {
         if (!ServerConfig.witherRose.get()) return;
         PlayerEntity p = e.getPlayer();
@@ -83,7 +147,6 @@ public class CommunityUpdate {
             w.setBlockState(pos, ModBlocks.VEXED_EARTH.get().getDefaultState());
         }
     }
-
 
 
 }

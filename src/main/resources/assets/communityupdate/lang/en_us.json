@@ -58,11 +58,12 @@
   "item.communityupdate.andesite_pebbles": "Bag of Andesite Pebbles",
   "item.communityupdate.diorite_pebbles": "Bag of Diorite Pebbles",
   "item.communityupdate.granite_pebbles": "Bag of Granite Pebbles",
+  "item.communityupdate.lore_tag": "Lore Tag",
 
 
   "command.communityupdate.chunkload.single": "§6A force loaded chunk was found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.multiple": "§6%s force loaded chunks were found in §c %s §6 at: §b %s",
   "command.communityupdate.chunkload.none": "§6No force loaded chunks were found in §c %s",
-  "text.communityupdate.nospawns" : "No mobs are able to spawn here.",
+  "text.communityupdate.nospawns": "No mobs are able to spawn here.",
   "itemGroup.communityupdate": "The Community Update"
 }
