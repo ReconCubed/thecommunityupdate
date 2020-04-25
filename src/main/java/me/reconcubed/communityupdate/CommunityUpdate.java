@@ -99,6 +99,7 @@ public class CommunityUpdate {
 
     @SubscribeEvent
     public void onAnvilUpdate(AnvilUpdateEvent event) {
+        // TODO Fix bug where game crashes if two lore tags are in the anvil
         if (event.getRight().getItem().equals(ModItems.LORE_TAG.get()) && event.getRight().getTag().contains("loreStorage") && !event.getLeft().getItem().equals(ModItems.LORE_TAG.get())) {
             ItemStack tag = event.getRight();
             ItemStack input = event.getLeft();
