@@ -85,7 +85,7 @@ public class CommunityUpdate {
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void onCombinationComplete(AnvilRepairEvent event) {
+    public void onCombinationComplete(AnvilRepairEvent event) {
         if (event.getIngredientInput() != null && event.getIngredientInput().getItem().equals(ModItems.LORE_TAG.get()) && event.getIngredientInput().getCount() > 1) {
             ItemStack newInput = event.getIngredientInput().copy();
             newInput.shrink(1);
