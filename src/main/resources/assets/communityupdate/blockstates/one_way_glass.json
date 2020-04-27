@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": [
+      { "model": "communityupdate:block/one_way_glass" }
+    ]
+  }
+}

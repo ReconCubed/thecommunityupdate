@@ -108,6 +108,11 @@ public class ModBlocks {
                     .hardnessAndResistance(0.6F)
                     .sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> ONE_WAY_GLASS = BLOCKS.register("one_way_glass", () -> new OneWayGlassBlock(
+            Block.Properties.create(Material.GLASS)
+                    .hardnessAndResistance(0.6F)
+                    .sound(SoundType.GLASS)));
+
     /**
      * ----------------    CONCRETE STAIRS    ----------------
      */
