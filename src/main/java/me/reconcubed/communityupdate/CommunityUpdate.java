@@ -2,10 +2,7 @@ package me.reconcubed.communityupdate;
 
 import me.reconcubed.communityupdate.config.ConfigHolder;
 import me.reconcubed.communityupdate.config.ServerConfig;
-import me.reconcubed.communityupdate.init.ModBlocks;
-import me.reconcubed.communityupdate.init.ModContainerTypes;
-import me.reconcubed.communityupdate.init.ModItems;
-import me.reconcubed.communityupdate.init.ModTileEntityTypes;
+import me.reconcubed.communityupdate.init.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
@@ -59,9 +56,11 @@ public class CommunityUpdate {
     public CommunityUpdate() {
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        OverrideItems.ITEMS.register(modEventBus);
         ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 //        ModEntityTypes.ENTITY_TYPES.register(modEventBus);
         ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+        ModRecipes.RECIPES.register(modEventBus);
 
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHolder.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, ConfigHolder.SERVER_SPEC);
