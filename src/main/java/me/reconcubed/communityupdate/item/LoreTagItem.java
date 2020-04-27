@@ -59,7 +59,6 @@ public class LoreTagItem extends Item {
         for (int i  = 0; i < storage.size(); i++) {
             ITextComponent line = storage.get(i).toFormattedComponent().applyTextStyle(TextFormatting.GREEN);
             String serialiser = ITextComponent.Serializer.toJson(line).replaceAll("^\"|\"$", "");
-//            serialiser.replaceAll("^\"|\"$", "");
             lore.add(new StringNBT(serialiser));
         }
 
@@ -78,24 +77,6 @@ public class LoreTagItem extends Item {
             }
 
         }
-    }
-
-    @Override
-    public ActionResultType onItemUse(ItemUseContext context) {
-        if(!context.getWorld().isRemote) {
-            ITextComponent nbt = new TranslationTextComponent("NBT: ");
-
-            if (context.getItem().hasTag()) {
-                nbt.appendSibling(new TranslationTextComponent(context.getItem().getTag().toString()));
-//                nbt.appendSibling((new TranslationTextComponent(context.getItem().getTooltip(context.getPlayer(), ITooltipFlag.TooltipFlags.NORMAL).toString())));
-                if (context.getItem().getTag().contains("loreStorage")) {
-                    nbt.appendSibling(getLore(context.getItem()).toFormattedComponent());
-                }
-            }
-            context.getPlayer().sendMessage(nbt);
-        }
-        return ActionResultType.PASS;
-
     }
 
 }
