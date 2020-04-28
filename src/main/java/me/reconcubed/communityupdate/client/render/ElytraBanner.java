@@ -29,7 +29,7 @@ public class ElytraBanner<T extends LivingEntity, M extends EntityModel<T>> exte
     private static final BannerTextures.Cache ELYTRA = new BannerTextures.Cache("elyta_", new ResourceLocation("textures/entity/elytra_base.png"), "textures/entity/elytra/");
     private final BannerTileEntity renderBanner = new BannerTileEntity();
     protected final LivingRenderer renderPlayer;
-    private final ElytraModel elytraModel = new ElytraModel();
+    private final ElytraModel<T> elytraModel = new ElytraModel();
 
     public ElytraBanner(IEntityRenderer<T, M> entityRendererIn, LivingRenderer renderPlayer) {
         super(entityRendererIn);
