@@ -2,6 +2,7 @@ package me.reconcubed.communityupdate.client.render;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.TextureUtil;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class LayeredColorMaskTextureCustom extends Texture {
         ) {
             nativeimage1.copyImageData(nativeimage);
 
-            for(int i = 0; i < 17 && i < this.listTextures.size() && i < this.listDyeColors.size(); ++i) {
+            for (int i = 0; i < 17 && i < this.listTextures.size() && i < this.listDyeColors.size(); ++i) {
                 String s = this.listTextures.get(i);
                 if (s != null) {
                     try (
@@ -46,8 +47,8 @@ public class LayeredColorMaskTextureCustom extends Texture {
                     ) {
                         int j = this.listDyeColors.get(i).getSwappedColorValue();
                         if (nativeimage2.getWidth() == nativeimage1.getWidth() && nativeimage2.getHeight() == nativeimage1.getHeight()) {
-                            for(int k = 0; k < nativeimage2.getHeight(); ++k) {
-                                for(int l = 0; l < nativeimage2.getWidth(); ++l) {
+                            for (int k = 0; k < nativeimage2.getHeight(); ++k) {
+                                for (int l = 0; l < nativeimage2.getWidth(); ++l) {
                                     int i1 = nativeimage2.getPixelRGBA(l, k);
                                     if ((i1 & -16777216) != 0) {
                                         int j1 = (i1 & 255) << 24 & -16777216;
@@ -67,7 +68,7 @@ public class LayeredColorMaskTextureCustom extends Texture {
             nativeimage1.uploadTextureSub(0, 0, 0, false);
             GlStateManager.pixelTransfer(3357, 0.0F);
         } catch (IOException ioexception) {
-            LOGGER.error("Couldn't load layered color mask image", (Throwable)ioexception);
+            LOGGER.error("Couldn't load layered color mask image", (Throwable) ioexception);
         }
 
     }

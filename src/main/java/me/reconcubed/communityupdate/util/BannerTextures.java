@@ -2,6 +2,7 @@ package me.reconcubed.communityupdate.util;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import me.reconcubed.communityupdate.client.render.LayeredColorMaskTextureCustom;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.LayeredColorMaskTexture;
 import net.minecraft.item.DyeColor;
@@ -68,7 +69,7 @@ public class BannerTextures {
 
                     BannerTexturesCustom$cacheentry = new BannerTextures.CacheEntry();
                     BannerTexturesCustom$cacheentry.textureLocation = new ResourceLocation(id);
-                    Minecraft.getInstance().getTextureManager().loadTexture(BannerTexturesCustom$cacheentry.textureLocation, new LayeredColorMaskTexture(this.cacheResourceLocation, list, colorList));
+                    Minecraft.getInstance().getTextureManager().loadTexture(BannerTexturesCustom$cacheentry.textureLocation, new LayeredColorMaskTextureCustom(this.cacheResourceLocation, list, colorList));
                     this.cacheMap.put(id, BannerTexturesCustom$cacheentry);
                 }
 
