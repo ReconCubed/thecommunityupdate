@@ -54,9 +54,8 @@ public class ElytraItem extends Item {
     @Override
     public ITextComponent getDisplayName(ItemStack stack) {
         if (stack.getTag() != null && stack.getTag().contains("BlockEntityTag")) {
-//            DyeColor dyeColor = DyeColor.getColor(stack);
-//            return new TranslationTextComponent("item.communityupdate.elytra." + dyeColor);
-            return new TranslationTextComponent("item.minecraft.elytra");
+            DyeColor dyeColor = DyeColor.byId(stack.getTag().getCompound("BlockEntityTag").getInt("Base"));
+            return new TranslationTextComponent("item.communityupdate.elytra." + dyeColor.getTranslationKey());
 
         } else {
             return new TranslationTextComponent("item.minecraft.elytra");
