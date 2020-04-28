@@ -51,13 +51,13 @@ public class ElytraBanner<T extends LivingEntity, M extends EntityModel<T>> exte
                 if (itemStack.hasTag() && itemStack.getTag().contains("BlockEntityTag")) {
                     this.renderBanner.loadFromItemStack(itemStack, DyeColor.byId(itemStack.getTag().getCompound("BlockEntityTag").getInt("Base")));
                     ResourceLocation texture = ELYTRA.getResourceLocation(this.renderBanner.getPatternResourceLocation(), this.renderBanner.getPatternList(), this.renderBanner.getColorList());
-                    this.renderPlayer.bindTexture(texture);
+                    this.bindTexture(texture);
                 } else if (clientPlayerEntity.isPlayerInfoSet() && clientPlayerEntity.getLocationElytra() != null) {
-                    this.renderPlayer.bindTexture(clientPlayerEntity.getLocationElytra());
+                    this.bindTexture(clientPlayerEntity.getLocationElytra());
                 } else if (clientPlayerEntity.hasPlayerInfo() && clientPlayerEntity.getLocationCape() != null && clientPlayerEntity.isWearing(PlayerModelPart.CAPE)) {
-                    this.renderPlayer.bindTexture(clientPlayerEntity.getLocationCape());
+                    this.bindTexture(clientPlayerEntity.getLocationCape());
                 } else {
-                    this.renderPlayer.bindTexture(elytraTexture);
+                    this.bindTexture(elytraTexture);
                 }
 
                 GlStateManager.pushMatrix();
