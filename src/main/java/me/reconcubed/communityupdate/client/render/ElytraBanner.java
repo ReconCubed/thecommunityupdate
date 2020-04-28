@@ -43,7 +43,7 @@ public class ElytraBanner<T extends LivingEntity, M extends EntityModel<T>> exte
         if (itemStack.getItem() == Items.ELYTRA) {
             GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.enableBlend();
-            GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+            GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 
             if (entityIn instanceof AbstractClientPlayerEntity) {
                 AbstractClientPlayerEntity clientPlayerEntity = (AbstractClientPlayerEntity) entityIn;
