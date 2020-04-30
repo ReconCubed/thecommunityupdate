@@ -1,4 +1,4 @@
-package me.reconcubed.communityupdate.client;
+package me.reconcubed.communityupdate.event;
 
 
 import com.google.common.collect.Lists;
@@ -10,6 +10,7 @@ import me.reconcubed.communityupdate.init.ModBlocks;
 import me.reconcubed.communityupdate.init.ModContainerTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
@@ -24,6 +25,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;

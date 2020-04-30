@@ -1,5 +1,6 @@
-package me.reconcubed.communityupdate;
+package me.reconcubed.communityupdate.event;
 
+import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.config.ConfigHolder;
 import me.reconcubed.communityupdate.init.ModBlocks;
 import me.reconcubed.communityupdate.init.ModItemGroups;

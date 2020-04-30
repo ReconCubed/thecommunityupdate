@@ -1,5 +1,6 @@
-package me.reconcubed.communityupdate;
+package me.reconcubed.communityupdate.event;
 
+import me.reconcubed.communityupdate.CommunityUpdate;
 import me.reconcubed.communityupdate.init.ModCommands;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

@@ -1,6 +1,7 @@
 package me.reconcubed.communityupdate.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.config.ModConfig;
 import org.apache.commons.lang3.tuple.Pair;
 
 
@@ -22,4 +23,13 @@ public final class ConfigHolder {
             SERVER_SPEC = specPair.getRight();
         }
     }
+
+    public static ModConfig modConfig;
+
+    public static void setConfig(String path, Object value) {
+        modConfig.getConfigData().set(path, value);
+        modConfig.save();
+    }
+
+
 }
