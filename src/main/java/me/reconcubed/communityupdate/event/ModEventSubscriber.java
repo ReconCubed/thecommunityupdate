@@ -1,20 +1,21 @@
 package me.reconcubed.communityupdate.event;
 
 import me.reconcubed.communityupdate.CommunityUpdate;
-import me.reconcubed.communityupdate.config.ConfigHolder;
 import me.reconcubed.communityupdate.init.ModBlocks;
 import me.reconcubed.communityupdate.init.ModItemGroups;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 @EventBusSubscriber(modid = CommunityUpdate.MODID, bus = EventBusSubscriber.Bus.MOD)
@@ -28,12 +29,22 @@ public class ModEventSubscriber {
     @SubscribeEvent
     public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
         final IForgeRegistry<Item> registry = event.getRegistry();
+
+        final ArrayList<Block> paths = new ArrayList<>(
+                Arrays.asList(
+                        ModBlocks.ANDESITE_PATH.get(),
+                        ModBlocks.STONE_PATH.get(),
+                        ModBlocks.GRANITE_PATH.get(),
+                        ModBlocks.DIORITE_PATH.get(),
+                        ModBlocks.COBBLESTONE_PATH.get(),
+                        ModBlocks.MOSSY_COBBLESTONE_PATH.get()
+                ));
+
         // Automatically register BlockItems for all our Blocks
         ModBlocks.BLOCKS.getEntries().stream()
                 .map(RegistryObject::get)
                 .filter(Objects::nonNull)
-//                .filter(block -> block.isIn(CommunityUpdate.paths))
-                .filter(block -> !block.isIn(CommunityUpdate.paths))
+                .filter(block -> !paths.contains(block))
                 // You can do extra filtering here if you don't want some blocks to have an BlockItem automatically registered for them
                 // .filter(block -> needsItemBlock(block))
                 // Register the BlockItem for the block
