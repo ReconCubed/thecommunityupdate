@@ -45,17 +45,25 @@ public class LayeredColorMaskTextureCustom extends Texture {
                     try (
                             NativeImage nativeimage2 = net.minecraftforge.client.MinecraftForgeClient.getImageLayer(new ResourceLocation(s), manager);
                     ) {
-                        int j = this.listDyeColors.get(i).getSwappedColorValue();
+                        int swappedColorValue = this.listDyeColors.get(i).getSwappedColorValue();
                         if (nativeimage2.getWidth() == nativeimage1.getWidth() && nativeimage2.getHeight() == nativeimage1.getHeight()) {
-                            for (int k = 0; k < nativeimage2.getHeight(); ++k) {
-                                for (int l = 0; l < nativeimage2.getWidth(); ++l) {
-                                    int i1 = nativeimage2.getPixelRGBA(l, k);
-                                    if ((i1 & -16777216) != 0) {
-                                        int j1 = (i1 & 255) << 24 & -16777216;
-                                        int k1 = nativeimage.getPixelRGBA(l, k);
-                                        int l1 = MathHelper.multiplyColor(k1, j) & 16777215;
-                                        nativeimage1.blendPixel(l, k, j1 | l1);
+                            for (int height = 0; height < nativeimage2.getHeight(); ++height) {
+                                for (int width = 0; width < nativeimage2.getWidth(); ++width) {
+
+                                    int pixelRGBA = nativeimage2.getPixelRGBA(width, height);
+
+                                    if (nativeimage2.getPixelLuminanceOrAlpha(width, height) == 0) {
+
+                                        int color = (pixelRGBA & 255) << 24 & -16777216;
+
+                                        nativeimage1.setPixelRGBA(width, height, color);
+                                    } else if ((pixelRGBA & -16777216) != 0) {
+                                        int shiftedPixelRGBA = (pixelRGBA & 255) << 24 & -16777216;
+                                        int pixelRGBA1 = nativeimage.getPixelRGBA(width, height);
+                                        int multipliedColor = MathHelper.multiplyColor(pixelRGBA1, swappedColorValue) & 16777215;
+                                        nativeimage1.blendPixel(width, height, shiftedPixelRGBA | multipliedColor);
                                     }
+
                                 }
                             }
                         }
