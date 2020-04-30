@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#W#",
+    "# #",
     "#W#",
     "B#B"
   ],
@@ -10,7 +10,7 @@
       "item": "minecraft:white_terracotta"
     },
     "W": {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:heart_of_the_sea"
     },
     "B": {
       "item": "minecraft:blue_terracotta"
