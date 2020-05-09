@@ -17,7 +17,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.opengl.GL11;
 
+// Cheers to TheGreyGhost on Minecraft Forge Forums for help with this one!
 @OnlyIn(Dist.CLIENT)
 public class LayeredColorMaskTextureCustom extends Texture {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -34,34 +36,35 @@ public class LayeredColorMaskTextureCustom extends Texture {
     public void loadTexture(IResourceManager manager) throws IOException {
         try (
                 IResource iresource = manager.getResource(this.textureLocation);
-                NativeImage nativeimage = NativeImage.read(iresource.getInputStream());
-                NativeImage nativeimage1 = new NativeImage(nativeimage.getWidth(), nativeimage.getHeight(), false);
+                NativeImage baseElytra = NativeImage.read(iresource.getInputStream());
+                NativeImage overlaidElytra = new NativeImage(baseElytra.getWidth(), baseElytra.getHeight(), false);
         ) {
-            nativeimage1.copyImageData(nativeimage);
+            overlaidElytra.copyImageData(baseElytra);
 
             for (int i = 0; i < 17 && i < this.listTextures.size() && i < this.listDyeColors.size(); ++i) {
-                String s = this.listTextures.get(i);
-                if (s != null) {
+                String bannerTextureRL = this.listTextures.get(i);
+                if (bannerTextureRL != null) {
                     try (
-                            NativeImage nativeimage2 = net.minecraftforge.client.MinecraftForgeClient.getImageLayer(new ResourceLocation(s), manager);
+                            NativeImage bannerLayer = net.minecraftforge.client.MinecraftForgeClient.getImageLayer(new ResourceLocation(bannerTextureRL), manager);
                     ) {
-                        int swappedColorValue = this.listDyeColors.get(i).getSwappedColorValue();
-                        if (nativeimage2.getWidth() == nativeimage1.getWidth() && nativeimage2.getHeight() == nativeimage1.getHeight()) {
-                            for (int height = 0; height < nativeimage2.getHeight(); ++height) {
-                                for (int width = 0; width < nativeimage2.getWidth(); ++width) {
+                        int bannerLayerColour = this.listDyeColors.get(i).getSwappedColorValue();
+                        if (bannerLayer.getWidth() == overlaidElytra.getWidth() && bannerLayer.getHeight() == overlaidElytra.getHeight()) {
+                            for (int height = 0; height < bannerLayer.getHeight(); ++height) {
+                                for (int width = 0; width < bannerLayer.getWidth(); ++width) {
 
-                                    int pixelRGBA = nativeimage2.getPixelRGBA(width, height);
+                                    int alphaBanner = bannerLayer.getPixelRGBA(width, height) & 0xff;  // extract the red channel, could have used green or blue also.
+                                    int alphaElytra = baseElytra.getPixelLuminanceOrAlpha(width, height) & 0xff;
+                                    //  algorithm is:
+                                    //  if elytra pixel is transparent, do nothing
+                                    //  otherwise:
+                                    //    the banner blend layer is a greyscale which is converted to a transparency:
+                                    //     blend the banner's colour into elytra pixel using the banner blend transparency
 
-                                    if (nativeimage2.getPixelLuminanceOrAlpha(width, height) == 0) {
-
-                                        int color = (pixelRGBA & 255) << 24 & -16777216;
-
-                                        nativeimage1.setPixelRGBA(width, height, color);
-                                    } else if ((pixelRGBA & -16777216) != 0) {
-                                        int shiftedPixelRGBA = (pixelRGBA & 255) << 24 & -16777216;
-                                        int pixelRGBA1 = nativeimage.getPixelRGBA(width, height);
-                                        int multipliedColor = MathHelper.multiplyColor(pixelRGBA1, swappedColorValue) & 16777215;
-                                        nativeimage1.blendPixel(width, height, shiftedPixelRGBA | multipliedColor);
+                                    if (alphaElytra != 0 && alphaBanner != 0) {
+                                        int elytraPixelRGBA = baseElytra.getPixelRGBA(width, height);
+                                        int multipliedColorRGB = MathHelper.multiplyColor(elytraPixelRGBA, bannerLayerColour) & 0xFFFFFF;
+                                        int multipliedColorRGBA = multipliedColorRGB | (alphaBanner << 24);
+                                        overlaidElytra.blendPixel(width, height, multipliedColorRGBA);
                                     }
 
                                 }
@@ -71,10 +74,9 @@ public class LayeredColorMaskTextureCustom extends Texture {
                 }
             }
 
-            TextureUtil.prepareImage(this.getGlTextureId(), nativeimage1.getWidth(), nativeimage1.getHeight());
-            GlStateManager.pixelTransfer(3357, Float.MAX_VALUE);
-            nativeimage1.uploadTextureSub(0, 0, 0, false);
-            GlStateManager.pixelTransfer(3357, 0.0F);
+            TextureUtil.prepareImage(this.getGlTextureId(), overlaidElytra.getWidth(), overlaidElytra.getHeight());
+            GlStateManager.pixelTransfer(GL11.GL_ALPHA_BIAS, 0.0F);
+            overlaidElytra.uploadTextureSub(0, 0, 0, false);
         } catch (IOException ioexception) {
             LOGGER.error("Couldn't load layered color mask image", (Throwable) ioexception);
         }
